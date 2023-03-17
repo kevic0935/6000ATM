@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="alnh1-kw3l9-001.ico" rel="shortcut icon"/>
+    <title>6000 ATM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <div class="d-md-flex align-items-stretch">
+
+        <div id="content" class="">
+            <div id="map"></div>
+        </div>
+
+
+        <nav class="">
+            <div class="p-3 pt-2">
+                <div class="iconcolor">
+                    <i class="fa-solid fa-piggy-bank"></i>
+                    6000 ATM
+                </div>
+
+                <hr>
+                
+                <div class="row">
+                    <div class="col-6 text-center">
+                        <select class="w-100" id="city" name="city">
+                            <option value = "">請選擇</option>
+                        </select>
+                    </div>
+                    <div class="col-6 text-center">
+                        <select class="w-100" id="area" name="area">
+                            <option value = "">請選擇</option>
+                        </select>
+                    </div>
+                </div>
+                  
+                
+                <hr>
+                <div class="mb-5">
+                    <h5>關鍵字</h5>
+                    <div class="tagcloud">
+                        <a href="#" class="tag-cloud-link">郵局領現</a>
+                        <a href="#" class="tag-cloud-link">登記入帳</a>
+                        <a href="#" class="tag-cloud-link">直接入帳</a>
+                        <a href="#" class="tag-cloud-link">特地偏鄉</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="footer">
+                    6000 ATM © 2023 - 2024
+                </div>
+                
+            </div>
+        </nav>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script>
+        let mapOptions = {
+            center: [25.0453888, 121.54902],
+            zoom: 16,
+        }
+        let map = new L.map('map' , mapOptions);
+
+        let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        map.addLayer(layer);
+
+        let marker = new L.Marker([25.0453888, 121.54902]);
+        marker.addTo(map);
+
+    </script>
+
+    <script src="CityDistrict.js"></script>
+    
+    <script src="https://colorlib.com/etc/bootstrap-sidebar/sidebar-08/js/popper.js"></script>
+    <script src="https://colorlib.com/etc/bootstrap-sidebar/sidebar-08/js/bootstrap.min.js"></script>
+    <script src="https://colorlib.com/etc/bootstrap-sidebar/sidebar-08/js/main.js"></script>
+</body>
+</html>
